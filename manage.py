@@ -25,22 +25,11 @@ def debug_main():
     from django.core.management import execute_from_command_line
     from django.core.management import call_command
 
-    call_command(
-        "load_leagues_csv",
-        "--commit"
-    )
-
-    # then load in our actual teams
-    call_command(
-        "load_teams_csv",
-        "--commit"
-    )
-
-    execute_from_command_line(["manage.py", "load_teams_csv"])
+    execute_from_command_line(["manage.py", "runserver"])
 
 
 if __name__ == '__main__':
 
-    #debug_main()
+    debug_main()
 
-    main()
+    #main()
