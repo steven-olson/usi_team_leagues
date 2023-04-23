@@ -1,12 +1,12 @@
-<p>ASDASDASD</p>>
-
 {% for league in all_leagues %}
     <h1>League Name: {{ league.name }}</h1>
-    <p>League teams:<p>
+    <h2>League teams:</h2>
+    <ul>
     {% for team in league.team_set.all %}
 
-        <p>{{team.name}}</p>
+        <li><p>{{team.name}}</p></li>
 
     {% endfor %}
+    </ul>
 
 {% endfor %}
