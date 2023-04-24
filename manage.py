@@ -20,16 +20,12 @@ def main():
 
 
 def debug_main():
-    """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'teams_leagues.settings')
     from django.core.management import execute_from_command_line
-    from django.core.management import call_command
 
     execute_from_command_line(["manage.py", "runserver"])
 
 
 if __name__ == '__main__':
-
-    debug_main()
-
-    #main()
+    #debug_main()
+    main()
