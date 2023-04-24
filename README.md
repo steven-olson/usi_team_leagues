@@ -20,7 +20,15 @@ ETL processes quite nicely. I didn't really feel that more tests were warranted 
 the scope of this work and the rest of the code (the two commands are the only technically
 interesting things here, you can eyeball everything else).
 
+<h2>Functional requirement #3 ambiguity</h2>
+I was kind of confused by the working of requirement 3, it looks like we need a user that
+- exists (done)
+- can access django admin (done)
+- only have access to change leagues (done, its the only admin view available)
+- "should allow access to add/change/delete teams" ??? (done as well, they can change teams
+- through the league view)
 
+That last point is kinda confusing but to my understanding I've implemented it correctly.
 
 <h2>How to run</h2>
 Pretty standard django stuff, the only nuance being that we need to run our setup command
@@ -30,6 +38,6 @@ Pretty standard django stuff, the only nuance being that we need to run our setu
 3. create a virtual env, I use venv: ```python -m venv venv```
 4. Activate virtual env: ```source ./venv/bin/activate```
 5. install packages: ```pip install -r requirements.txt```
-6. run migrations: ```python manage.py migrate```
+6. run migrations (these should all here for you since its just sqlite no makemigrations needed): ```python manage.py migrate```
 7. run setup command: ```python manage.py setup```
 8. run the actual app: ```python manage.py runserver```
